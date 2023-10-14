@@ -1,0 +1,16 @@
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+nltk.download('vader_lexicon')
+
+# Initialize the sentiment analyzer
+analyzer = SentimentIntensityAnalyzer()
+
+# Example posts
+posts = ["I love this product!", "I'm feeling neutral today.", "This is terrible!"]
+
+# Perform sentiment analysis on each post
+for post in posts:
+    sentiment = analyzer.polarity_scores(post)
+    print(f"Post: {post}")
+    print("Sentiment Analysis:", sentiment)
